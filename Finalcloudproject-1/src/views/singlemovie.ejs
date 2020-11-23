@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineverse</title>
+
+    <head rel="stylesheet" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__logo"> Cineverse </div>
+
+        </header>
+        <div class="wrapper">
+            <div class="single-movie">
+                <a href="/singlemoviearticle"></a>
+                <% if(singlemoviearticle != null) { %>
+                    <h2>
+                        <%- singlemoviearticle.original_title %>
+                    </h2>
+                    <p>
+                        <%- singlemoviearticle.overview %>
+                    </p>
+                    <button type="button" onclick="alert('You pressed the button!')"> like </button>
+                    <button type="button" onclick="alert('You pressed the button!')"> Buy </button>
+
+                    <% } else { %>
+                        No posts found.
+                        <% } %>
+            </div>
+        </div>
+    </body>
+
+
+
+
+
+</html>

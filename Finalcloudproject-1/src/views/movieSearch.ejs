@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineverse</title>
+
+    <head rel="stylesheet" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__logo"> Cineverse </div>
+            <div class="header__search">
+                <form action="/singlemoviearticle" method="get">
+                    <input type="text" name="search" placeholder="Search the movie" required>
+                    <input type="submit" value="Search">
+                </form>
+
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="movies">
+                <%if (ma != null) {%>
+                    <% ma.results.forEach(function(ma,index) { %>
+                        <a href="/ma" class="movie__card">
+
+                            <h2>
+                                <%- ma.title%>
+                            </h2>
+                            <p>
+                                <%- ma.overview%>
+                            </p>
+                        </a>
+
+                        <%  }) %>
+                            <% } else { %>
+                                no posts found.
+                                <% } %>
+            </div>
+        </div>
+    </body>
